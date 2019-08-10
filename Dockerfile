@@ -4,8 +4,6 @@
 FROM openjdk:8
 
 # Set up the image for the server
-#RUN useradd --system --home-dir /spigotmc --create-home spigotmc
-#USER spigotmc
 RUN mkdir -p /spigotmc
 WORKDIR /spigotmc
 
