@@ -3,6 +3,8 @@
 
 FROM openjdk:8
 
+ENV SERVER_VERSION ""
+
 # Set up the image for the server
 RUN mkdir -p /spigotmc
 WORKDIR /spigotmc

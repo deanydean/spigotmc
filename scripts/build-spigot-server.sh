@@ -5,6 +5,13 @@ set -o errexit -o nounset -o pipefail
 
 : ${BUILD_DIR:="${HOME}/build"}
 : ${JAVA_HOME:="/usr/local/openjdk-8"}
+: ${SPIGOT_VERSION:=""}
+: ${BUILD_TOOLS_OPTS:=""}
+
+if [ -n "${SPIGOT_VERSION}" ]
+then
+    BUILD_TOOLS_OPTS="${BUILD_TOOLS_OPTS} --rev ${SPIGOT_VERSION}"
+fi
 
 echo "Building SpigotMC server jar...."
 echo
@@ -18,7 +25,7 @@ then
 fi
 
 pushd "${BUILD_DIR}"
-    ${JAVA_HOME}/bin/java -jar ./build-tools.jar
+    ${JAVA_HOME}/bin/java -jar ./build-tools.jar ${BUILD_TOOLS_OPTS}
 popd
 
 # Move the built jar into place
