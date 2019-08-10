@@ -8,7 +8,6 @@ RUN mkdir -p /spigotmc
 WORKDIR /spigotmc
 
 # Add the files we need
-ADD ./etc /opt/spigotmc/etc
 ADD ./scripts /opt/spigotmc/scripts
 
 EXPOSE 25565
